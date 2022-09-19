@@ -25,9 +25,9 @@ This sample demonstrates a way to retrieve quantities of materials for a Revit p
 
 ```json
 {
-  "id": "RevitIfcExportorActivity",
+  "id": "RevitMaterialsExtractorActivity",
   "commandLine": [
-    "$(engine.path)\\\\revitcoreconsole.exe /i \"$(args[inputFile].path)\" /al \"$(appbundles[RevitIfcExportor].path)\""
+    "$(engine.path)\\\\revitcoreconsole.exe /i \"$(args[inputFile].path)\" /al \"$(appbundles[MaterialsExtractor].path)\""
   ],
   "parameters": {
     "inputFile": {
