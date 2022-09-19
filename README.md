@@ -1,4 +1,4 @@
-﻿# Revit CompoundStructureExtractor bundle for Forge Design Automation
+﻿# Revit Materials Extractor bundle for Forge Design Automation
 
 [![Design Automation](https://img.shields.io/badge/Design%20Automation-v3-green.svg)](http://developer.autodesk.com/)
 
