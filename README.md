@@ -9,7 +9,7 @@
 
 # Description
 
-This sample demonstrates a way to retrieve quantities of materials for a Revit project based on a refference view,a mapping JSON file (to define the units for each material and proper ExportClassAs used by OneClick - just like class-mapping.json) and one JSON with parameters to define urn and viewname [Autodesk Revit IFC](https://github.com/Autodesk/revit-ifc)
+This sample demonstrates a way to retrieve quantities of materials for a Revit project
 
 # Development Setup
 
