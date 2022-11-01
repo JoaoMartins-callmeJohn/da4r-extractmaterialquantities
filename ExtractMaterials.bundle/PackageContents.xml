@@ -3,6 +3,6 @@
   <CompanyDetails Name="Autodesk, Inc" Url="https://github.com/JoaoMartins-Forge" Email="joao.martins@autodesk.com"/>
   <Components Description="Extract Materials Quantities">
     <RuntimeRequirements SeriesMax="R2023" SeriesMin="R2019" Platform="Revit" OS="Win64"/>
-    <ComponentEntry LoadOnRevitStartup="True" LoadOnCommandInvocation="False" AppDescription="Extract Compound Layers" ModuleName="./Contents/CompoundExtractor.addin" Version="1.0.0" AppName="Extract Compound Structure Layers"/>
+    <ComponentEntry LoadOnRevitStartup="True" LoadOnCommandInvocation="False" AppDescription="Extract Compound Layers" ModuleName="./Contents/ExtractMaterialQuantities.addin" Version="1.0.0" AppName="Extract Material quantities"/>
   </Components>
 </ApplicationPackage>
