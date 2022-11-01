@@ -50,7 +50,7 @@ namespace ExtractMaterialQuantities
 								double materialVolume = element.GetMaterialVolume(materialId);
 
 								dynamic newMaterial = new JObject();
-								newMaterial.externalId = element.UniqueId.ToString();
+								newMaterial.externalId = element.UniqueId;
 								newMaterial.revitcategory = elementCategory.Name;
 								newMaterial.revitmaterial = material.Name;
 								newMaterial.materialareaqty = materialArea;
