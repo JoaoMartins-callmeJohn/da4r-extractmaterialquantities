@@ -48,6 +48,7 @@ namespace ExtractMaterialQuantities
 								Element material = doc.GetElement(materialId);
 								double materialArea = element.GetMaterialArea(materialId, false);
 								double materialVolume = element.GetMaterialVolume(materialId);
+							  Console.WriteLine("Material area and volume acquired!");
 
 								dynamic newMaterial = new JObject();
 								newMaterial.externalId = element.UniqueId.ToString();
