@@ -59,7 +59,8 @@ namespace ExtractMaterialQuantities
 								newMaterial.materialvolumeqtytype = UnitTypeId.CubicMeters.TypeId;
 
 								Parameter elementLength = element.LookupParameter("Length");
-								newMaterial.elementlength = UnitUtils.ConvertFromInternalUnits(elementLength != null ? elementLength.AsDouble() : 0, UnitTypeId.Meters);
+								double elementLengthDouble = elementLength != null ? elementLength.AsDouble() : 0;
+								newMaterial.elementlength = UnitUtils.ConvertFromInternalUnits(elementLengthDouble, UnitTypeId.Meters);
 								newMaterial.elementlengthqtytype = UnitTypeId.Meters.TypeId;
 
 								urnResult.results.Add(newMaterial);
