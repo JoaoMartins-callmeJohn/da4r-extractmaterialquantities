@@ -30,6 +30,7 @@ namespace ExtractMaterialQuantities
 				if (doc == null) throw new InvalidOperationException("Could not open document.");
 
 				dynamic urnResult = new JObject();
+				urnResult.results = new JArray();
 
 				List<Element> elements = new FilteredElementCollector(doc).WhereElementIsNotElementType().ToList();
 
