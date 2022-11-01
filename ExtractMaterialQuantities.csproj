@@ -54,13 +54,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ExtractMaterials.addin" />
+    <None Include="ExtractMaterials.bundle\Contents\ExtractMaterials.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ExctractMaterials.buncle\PackageContents.xml" />
+    <Content Include="ExtractMaterials.bundle\PackageContents.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /Y /F "$(TargetDir)*.dll" "$(ProjectDir)ExtractMaterials.bundle\Contents\"</PostBuildEvent>
