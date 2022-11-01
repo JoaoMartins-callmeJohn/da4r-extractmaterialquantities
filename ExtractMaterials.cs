@@ -48,16 +48,13 @@ namespace ExtractMaterialQuantities
 								Element material = doc.GetElement(materialId);
 								double materialArea = element.GetMaterialArea(materialId, false);
 								double materialVolume = element.GetMaterialVolume(materialId);
-							  Console.WriteLine("Material area and volume acquired!");
 
 								dynamic newMaterial = new JObject();
 								newMaterial.externalId = element.UniqueId.ToString();
 								newMaterial.revitcategory = elementCategory.Name;
 								newMaterial.revitmaterial = material.Name;
-								newMaterial.materialareaqty = UnitUtils.ConvertFromInternalUnits(materialArea, UnitTypeId.SquareMeters);
-								newMaterial.materialareaqtytype = UnitTypeId.SquareMeters.TypeId;
-								newMaterial.materialvolumeqty = UnitUtils.ConvertFromInternalUnits(materialVolume, UnitTypeId.CubicMeters);
-								newMaterial.materialvolumeqtytype = UnitTypeId.CubicMeters.TypeId;
+								newMaterial.materialareaqty = materialArea;
+								newMaterial.materialvolumeqty = materialVolume;
 
 								urnResult.results.Add(newMaterial);
 							}
