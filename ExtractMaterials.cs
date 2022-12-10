@@ -8,6 +8,9 @@ using DesignAutomationFramework;
 using Autodesk.Revit.ApplicationServices;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System.Text;
 
 namespace ExtractMaterialQuantities
 {
@@ -17,6 +20,7 @@ namespace ExtractMaterialQuantities
 	{
 			public static void ExtractModelMaterials(DesignAutomationData data)
 			{
+				InputParams inputParameters = JsonConvert.DeserializeObject<InputParams>(File.ReadAllText("params.json"));
 
 				if (data == null) throw new ArgumentNullException(nameof(data));
 
@@ -58,6 +62,8 @@ namespace ExtractMaterialQuantities
 								newMaterial.materialvolumeqty = materialVolume;
 
 								urnResult.results.Add(newMaterial);
+
+								SendMaterial(inputParameters.url, newMaterial);
 							}
 							catch (Exception ex)
 							{
@@ -83,7 +89,14 @@ namespace ExtractMaterialQuantities
 
 			}
 
-			public ExternalDBApplicationResult OnShutdown(ControlledApplication application)
+		private static async Task SendMaterial(string url, JObject newMaterial)
+		{
+			var client = new HttpClient();
+			var content = new StringContent(newMaterial.ToString(), Encoding.UTF8, "application/json");
+			var result = client.PostAsync(url, content).Result;
+		}
+
+		public ExternalDBApplicationResult OnShutdown(ControlledApplication application)
 			{
 				return ExternalDBApplicationResult.Succeeded;
 			}
@@ -99,5 +112,10 @@ namespace ExtractMaterialQuantities
 				e.Succeeded = true;
 				ExtractModelMaterials(e.DesignAutomationData);
 			}
+	}
+	public class InputParams
+	{
+		public string url { get; set; }
+
 	}
 }

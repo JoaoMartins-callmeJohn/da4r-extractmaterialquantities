@@ -36,6 +36,12 @@ This sample demonstrates a way to retrieve quantities of materials for a Revit p
       "required": true,
       "localName": "$(inputFile)"
     },
+	"inputJson":{
+	  "verb": "get",
+      "description": "Input Revit File",
+      "required": true,
+      "localName": "params.json"
+	},
     "result": {
       "zip": false,
       "verb": "put",
@@ -63,6 +69,10 @@ This sample demonstrates a way to retrieve quantities of materials for a Revit p
         "Authorization": "Bearer TOKEN"
       }
     },
+	"inputJson": {
+        "verb": "get",
+        "url": "data:application/json,{'url':'HERE GOES YOUR URL'}"
+	},
     "result": {
       "verb": "post",
       "url": "URL TO UPLOAD THE RESULT",
